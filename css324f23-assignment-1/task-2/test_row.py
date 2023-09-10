@@ -7,4 +7,4 @@ for idx in range(9):
   if math.ceil(goal[idx]/3) != math.ceil(board[idx]/3):
     print(board[idx],'is in wrong row')
     res += 1
-print('res:',res,"")
+print('res:',res)

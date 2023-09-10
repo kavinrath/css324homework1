@@ -50,5 +50,16 @@ def h1(s):
 
 def h3(s):
     # implement this function
+    import math
+    goal = (1, 2, 3, 4, 5, 6, 7, 8, 0)
     board, _, _ = s
-    return 0
+    res = 0
+    # The for loop counts the number of tiles out of their target row
+    for idx in range(9):
+        if math.ceil(goal[idx]/3) != math.ceil(board[idx]/3):
+            res += 1
+    # The for loop counts the number of tiles out of their target column
+    for idx in range(9):
+        if (goal[idx]-1)%3+1 != (board[idx]-1)%3+1:
+            res += 1
+    return res

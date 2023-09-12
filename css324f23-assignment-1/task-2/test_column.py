@@ -3,8 +3,9 @@ board = (7, 2, 4, 5, 0, 6, 8, 3, 1)
 res = 0
 # The for loop counts the number of tiles out of their target column
 for idx in range(9):
-  print('Checking if',board[idx],'is in',goal[idx%3:9:3])
-  if board[idx] not in goal[idx%3:9:3]:
-    print(board[idx],'is in wrong column')
-    res += 1
+  if board[idx] != 0:
+    print('Checking if',board[idx],'is in',goal[idx%3:9:3])
+    if board[idx] not in goal[idx%3:9:3]:
+      print(board[idx],'is in wrong column')
+      res += 1
 print('res:',res)

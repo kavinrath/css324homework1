@@ -53,12 +53,10 @@ def h3(s):
     goal = (1, 2, 3, 4, 5, 6, 7, 8, 0)
     board, _, _ = s
     res = 0
-    # The for loop counts the number of tiles out of their target row
     for idx in range(9):
-        if board[idx] not in goal[(idx//3)*3:(idx//3)*3+3]:
-            res += 1
-    # The for loop counts the number of tiles out of their target column
-    for idx in range(9):
-        if board[idx] not in goal[idx%3:9:3]:
-            res += 1
+        if board[idx] != 0:
+            if board[idx] not in goal[(idx//3)*3:(idx//3)*3+3]:
+                res += 1
+            if board[idx] not in goal[idx%3:9:3]:
+                res += 1
     return res

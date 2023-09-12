@@ -55,8 +55,8 @@ def h3(s):
     res = 0
     for idx in range(9):
         if board[idx] != 0: # Exclude blank
-            if board[idx] not in goal[(idx//3)*3: (idx//3)*3+3]: # Check if tile is in target column
+            if board[idx] not in goal[(idx//3)*3: (idx//3)*3+3]: # Check if tile is in target row
                 res += 1
-            if board[idx] not in goal[idx%3: 9: 3]: # Check if tile is in target row
+            if board[idx] not in goal[idx%3: 9: 3]: # Check if tile is in target column
                 res += 1
     return res
